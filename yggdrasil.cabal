@@ -1,0 +1,62 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: c2f0895e33e78f0d3ba0ce3c24cee94976764926707f032f5cc5dbe3187e0a70
+
+name:           yggdrasil
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/Anderssorby/yggdrasil#readme>
+homepage:       https://github.com/Anderssorby/yggdrasil#readme
+bug-reports:    https://github.com/Anderssorby/yggdrasil/issues
+author:         Anders Christiansen Sørby
+maintainer:     anders@sorby.xyz
+copyright:      2020 Anders Christiansen Sørby
+license:        GPLv3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/Anderssorby/yggdrasil
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_yggdrasil
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable yggdrasil-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_yggdrasil
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , yggdrasil
+  default-language: Haskell2010
+
+test-suite yggdrasil-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_yggdrasil
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , yggdrasil
+  default-language: Haskell2010
